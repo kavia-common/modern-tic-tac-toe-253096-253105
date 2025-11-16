@@ -21,8 +21,7 @@ export default function GameScreen() {
 
   useEffect(() => {
     if (gameOver) {
-      // Also navigate to results route with state if desired (not mandatory)
-      // We'll keep modal in place and allow user to decide.
+      // keep modal in place and allow user to decide
     }
   }, [gameOver]);
 
@@ -68,7 +67,7 @@ export default function GameScreen() {
           winningLine={winningLine}
           nextHint={nextHint}
         />
-        <div className="mt-16" style={{display:"flex", gap: 10}}>
+        <div className="mt-16" style={{display:"flex", gap: 10, flexWrap: "wrap"}}>
           <button className="btn" onClick={handlePlayAgain}>Reset</button>
           <button className="btn ghost" onClick={handleChangeLevel}>Change Level</button>
         </div>

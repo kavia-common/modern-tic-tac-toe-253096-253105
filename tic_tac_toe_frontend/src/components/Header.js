@@ -23,14 +23,14 @@ export default function Header({ title = "Tic-Tac-Toe", onToggleSound }) {
 
   return (
     <div className="header">
-      <div className="brand" role="button" onClick={() => nav("/")}>
-        <div className="brand-badge">TTT</div>
+      <div className="brand" role="button" tabIndex={0} onClick={() => nav("/")} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && nav("/")}>
+        <div className="brand-badge" aria-hidden>TTT</div>
         <div>
-          <div style={{fontWeight: 800}}>{title}</div>
+          <div style={{fontWeight: 800, color: "var(--color-text-strong)"}}>{title}</div>
           <div style={{fontSize: 12, color: "var(--color-muted-text)"}}>Ocean Professional</div>
         </div>
       </div>
-      <div style={{display: "flex", gap: 8}}>
+      <div style={{display: "flex", gap: 8, flexWrap: "wrap"}}>
         {location.pathname !== "/" && (
           <button className="btn ghost" onClick={() => nav("/")}>Home</button>
         )}

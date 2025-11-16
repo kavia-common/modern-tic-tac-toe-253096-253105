@@ -19,7 +19,7 @@ export default function Scoreboard({ scores, currentPlayer, modeLabel }) {
         </div>
       </div>
       <div className="subtitle">
-        Turn: <strong style={{color: "var(--color-primary)"}}>{currentPlayer}</strong>
+        Turn: <strong style={{color: "var(--color-primary-200)"}}>{currentPlayer}</strong>
         {modeLabel ? <> • <span>{modeLabel}</span></> : null}
       </div>
     </div>

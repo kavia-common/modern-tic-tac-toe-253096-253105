@@ -10,7 +10,7 @@ export default function Cell({ value, onClick, disabled, isWinning, ghost }) {
       aria-label={`Cell ${value || "empty"}`}
     >
       {value}
-      {!value && ghost ? <div className="ghost-mark">{ghost}</div> : null}
+      {!value && ghost ? <div className="ghost-mark" aria-hidden>{ghost}</div> : null}
     </button>
   );
 }

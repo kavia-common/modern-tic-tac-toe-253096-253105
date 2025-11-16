@@ -15,7 +15,7 @@ export default function ResultsScreen() {
       <div className="card" style={{marginTop: 16}}>
         <h2 className="title">{label}</h2>
         <div className="subtitle">Play again or change level to try a different challenge.</div>
-        <div style={{display:"flex", gap:10, marginTop: 12}}>
+        <div style={{display:"flex", gap:10, marginTop: 12, flexWrap: "wrap"}}>
           <button className="btn" onClick={() => nav("/game", { replace: true })}>Play Again</button>
           <button className="btn ghost" onClick={() => nav("/level", { replace: true })}>Change Level</button>
         </div>

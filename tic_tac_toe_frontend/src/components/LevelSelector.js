@@ -13,7 +13,7 @@ export default function LevelSelector({ onSelect }) {
         <div className="card" key={lvl.id} style={{display: "flex", flexDirection: "column", gap: 8}}>
           <div style={{display:"flex", alignItems:"center", gap:10}}>
             <div className="brand-badge" aria-hidden>{lvl.badge}</div>
-            <div style={{fontWeight:800}}>{lvl.name}</div>
+            <div style={{fontWeight:800, color:"var(--color-text-strong)"}}>{lvl.name}</div>
           </div>
           <div className="subtitle">{lvl.desc}</div>
           <button className="btn" onClick={() => onSelect(lvl.id)}>
