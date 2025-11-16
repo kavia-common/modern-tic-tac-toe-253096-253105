@@ -2,13 +2,16 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import LevelSelector from "../components/LevelSelector";
+import { useMusic } from "../context/MusicContext";
 
 export default function LevelSelectScreen() {
   const nav = useNavigate();
   const location = useLocation();
   const mode = location.state?.mode || "pva";
+  const { requestStartAfterUserGesture } = useMusic();
 
   const handleSelect = (level) => {
+    requestStartAfterUserGesture();
     nav("/game", { state: { mode, level } });
   };
 

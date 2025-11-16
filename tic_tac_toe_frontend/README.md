@@ -8,6 +8,7 @@ This project provides a minimal React template with a clean, modern UI and minim
 - **Modern UI**: Clean, responsive design with KAVIA brand styling
 - **Fast**: Minimal dependencies for quick loading times
 - **Simple**: Easy to understand and modify
+- **Background Music (new)**: Continuous looped background track with an ON/OFF toggle. Preference persists in localStorage.
 
 ## Getting Started
 
@@ -26,6 +27,21 @@ Launches the test runner in interactive watch mode.
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+## Background Music Setup
+
+- The app looks for an audio file at:
+  public/assets/audio/bg-music.mp3
+
+- If the file is missing, the app will not error. The toggle remains visible but will show a tooltip indicating the file is missing. Add a royalty-free looped track (recommended length 30–120s) to enable playback.
+
+- Autoplay policy compliance:
+  - Music starts muted/paused until the first user interaction.
+  - If the user preference is ON (stored under `app.music.enabled`), playback will start after the first gesture.
+  - Default volume is 0.25 and the track loops continuously.
+
+- Accessibility:
+  - Music toggle has `aria-pressed` and `title` attributes.
 
 ## Customization
 

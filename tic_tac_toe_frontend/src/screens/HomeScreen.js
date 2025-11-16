@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import { useMusic } from "../context/MusicContext";
 
 /**
  * PUBLIC_INTERFACE
@@ -8,6 +9,16 @@ import Header from "../components/Header";
  */
 export default function HomeScreen() {
   const nav = useNavigate();
+  const { requestStartAfterUserGesture } = useMusic();
+
+  const goPva = () => {
+    requestStartAfterUserGesture();
+    nav("/level", { state: { mode: "pva" } });
+  };
+  const goLocal = () => {
+    requestStartAfterUserGesture();
+    nav("/game", { state: { mode: "local" } });
+  };
 
   return (
     <div className="container">
@@ -17,11 +28,11 @@ export default function HomeScreen() {
         <div className="subtitle">Modern, responsive, and fun — choose your mode below.</div>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 12 }}>
           {/* Primary button uses --primary and --primary-strong via .btn */}
-          <button className="btn" onClick={() => nav("/level", { state: { mode: "pva" } })}>
+          <button className="btn" onClick={goPva}>
             Player vs AI
           </button>
           {/* Secondary button uses surface-2 and border-muted via .btn.secondary */}
-          <button className="btn secondary" onClick={() => nav("/game", { state: { mode: "local" } })}>
+          <button className="btn secondary" onClick={goLocal}>
             Local 2-Player
           </button>
         </div>
