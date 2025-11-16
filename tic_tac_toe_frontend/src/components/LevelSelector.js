@@ -1,6 +1,9 @@
 import React from "react";
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * LevelSelector cards use theme surfaces and text tokens.
+ */
 export default function LevelSelector({ onSelect }) {
   const levels = [
     { id: 1, name: "Level 1 - Easy", desc: "Random moves. Great for warming up.", badge: "🎈" },
@@ -10,10 +13,10 @@ export default function LevelSelector({ onSelect }) {
   return (
     <div className="grid grid-3">
       {levels.map((lvl) => (
-        <div className="card" key={lvl.id} style={{display: "flex", flexDirection: "column", gap: 8}}>
-          <div style={{display:"flex", alignItems:"center", gap:10}}>
+        <div className="card" key={lvl.id} style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          <div style={{ display:"flex", alignItems:"center", gap:10 }}>
             <div className="brand-badge" aria-hidden>{lvl.badge}</div>
-            <div style={{fontWeight:800, color:"var(--color-text-strong)"}}>{lvl.name}</div>
+            <div style={{ fontWeight: 700, color: "var(--text-primary)" }}>{lvl.name}</div>
           </div>
           <div className="subtitle">{lvl.desc}</div>
           <button className="btn" onClick={() => onSelect(lvl.id)}>

@@ -1,7 +1,12 @@
 import React from "react";
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * Scoreboard uses theme tokens for colors and spacing.
+ */
 export default function Scoreboard({ scores, currentPlayer, modeLabel }) {
+  // Accent current player using X/O brand colors from theme
+  const currentColor = currentPlayer === "X" ? "var(--x-color)" : "var(--o-color)";
   return (
     <div>
       <div className="scoreboard">
@@ -19,7 +24,8 @@ export default function Scoreboard({ scores, currentPlayer, modeLabel }) {
         </div>
       </div>
       <div className="subtitle">
-        Turn: <strong style={{color: "var(--color-primary-200)"}}>{currentPlayer}</strong>
+        {/* Theme mapping: Turn indicator uses x/o color */}
+        Turn: <strong style={{ color: currentColor }}>{currentPlayer}</strong>
         {modeLabel ? <> • <span>{modeLabel}</span></> : null}
       </div>
     </div>

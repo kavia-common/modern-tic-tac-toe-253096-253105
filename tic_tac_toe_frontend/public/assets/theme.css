@@ -1,0 +1,28 @@
+:root {
+  --bg-canvas: #0F1222;
+  --bg-surface: #171A2C;
+  --bg-surface-2: #1E2337;
+  --border-muted: #2A3150;
+  --text-primary: #E6E8F5;
+  --text-secondary: #AAB1D6;
+
+  --primary: #6C8BFF;
+  --primary-strong: #4C6BFF;
+  --primary-soft: #3A4780;
+
+  --secondary: #22D3EE;
+  --accent: #F59E0B;
+  --success: #22C55E;
+  --danger: #EF4444;
+
+  --x-color: var(--primary);
+  --o-color: #FF7AB6;
+
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+body {
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}

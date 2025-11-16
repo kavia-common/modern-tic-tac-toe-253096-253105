@@ -48,7 +48,7 @@ export default function GameScreen() {
   return (
     <div className="container">
       <Header title="Game" onToggleSound={setSound} />
-      <div className="card" style={{marginTop: 16}}>
+      <div className="card" style={{ marginTop: 16 }}>
         <Scoreboard scores={scores} currentPlayer={current} modeLabel={modeLabel} />
         <div className="mt-12">
           <Timer
@@ -63,12 +63,14 @@ export default function GameScreen() {
         <Board
           board={board}
           onPlay={handleCell}
-          disabled={gameOver || (mode === "pva" && current === "O")} 
+          disabled={gameOver || (mode === "pva" && current === "O")}
           winningLine={winningLine}
           nextHint={nextHint}
         />
-        <div className="mt-16" style={{display:"flex", gap: 10, flexWrap: "wrap"}}>
+        <div className="mt-16" style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+          {/* Primary: Reset per theme */}
           <button className="btn" onClick={handlePlayAgain}>Reset</button>
+          {/* Ghost/secondary per theme */}
           <button className="btn ghost" onClick={handleChangeLevel}>Change Level</button>
         </div>
       </div>
